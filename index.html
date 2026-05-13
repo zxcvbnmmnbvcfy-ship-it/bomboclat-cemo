@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BOMBOCLAT CEMO resmi eğlence galerisi." />
+  <title>BOMBOCLAT CEMO</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="topbar">
+    <a class="logo" href="#home">BOMBOCLAT <span>CEMO</span></a>
+    <nav>
+      <a href="#gallery">Galeri</a>
+      <a href="#random">Random</a>
+      <a href="#about">Hakkında</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">SANAYİNİN EFSANE KARAKTERİ</p>
+        <h1>BOMBOCLAT<br><span>CEMO</span></h1>
+        <p class="lead">Sarımsak, sanayi, oto parça ve sınırsız Cemo enerjisi tek sayfada toplandı.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#gallery">Fotoğraflara Bak</a>
+          <button class="btn ghost" id="heroRandom">Random Cemo</button>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img id="heroImage" src="assets/cemo-01.png" alt="Bomboclat Cemo ana görseli" />
+        <div class="hero-caption">
+          <strong id="heroTitle">Sarımsak Kralı</strong>
+          <span>18 fotoğraf eklendi</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker">
+      <div>
+        <span>BOMBOCLAT CEMO</span>
+        <span>SANAYİ MODU</span>
+        <span>SARIMSAK LEVEL MAX</span>
+        <span>GARAGE EDITION</span>
+        <span>BOMBOCLAT CEMO</span>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="section-head">
+        <p class="eyebrow">TÜM FOTOĞRAFLAR</p>
+        <h2>Cemo Gallery</h2>
+      </div>
+      <div class="gallery" id="galleryGrid"></div>
+    </section>
+
+    <section id="random" class="random-section">
+      <div class="random-box">
+        <p class="eyebrow">ŞANSINI DENE</p>
+        <h2>Random Cemo Modu</h2>
+        <p>Butona basınca galeriden rastgele bir Cemo karesi seçilir.</p>
+        <button class="btn primary" id="randomBtn">Random Cemo Getir</button>
+      </div>
+      <div class="random-preview">
+        <img id="randomImage" src="assets/cemo-02.jpg" alt="Random Cemo görseli" />
+        <strong id="randomTitle">Aynadan Bakış</strong>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>BOMBOCLAT CEMO</h2>
+      <p>Bu site GitHub Pages için hazırlandı. Dosyaları repoya at, Pages kısmından yayınla, site herkese açık olur.</p>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close" id="closeLightbox">×</button>
+    <img id="lightboxImage" src="" alt="Büyük Cemo görseli" />
+    <p id="lightboxTitle"></p>
+  </div>
+
+  <script>
+    const images = [
+  { src: "assets/cemo-01.png", title: "Sarımsak Kralı" },
+  { src: "assets/cemo-02.jpg", title: "Aynadan Bakış" },
+  { src: "assets/cemo-03.jpg", title: "Sanayi Alevi" },
+  { src: "assets/cemo-04.jpg", title: "Tamir Modu" },
+  { src: "assets/cemo-05.jpg", title: "Camdan Gülüş" },
+  { src: "assets/cemo-06.jpg", title: "Usta Pozu" },
+  { src: "assets/cemo-07.jpg", title: "Sanayi Portresi" },
+  { src: "assets/cemo-08.jpg", title: "Yakın Plan Efsane" },
+  { src: "assets/cemo-09.jpg", title: "Parça Deposu" },
+  { src: "assets/cemo-10.jpg", title: "Atölye Enerjisi" },
+  { src: "assets/cemo-11.jpg", title: "Gözlüklü Boss" },
+  { src: "assets/cemo-12.jpg", title: "Kahkaha Anı" },
+  { src: "assets/cemo-13.jpg", title: "Gizli Bölge" },
+  { src: "assets/cemo-14.jpg", title: "Derin Depo" },
+  { src: "assets/cemo-15.jpg", title: "Mola Masası" },
+  { src: "assets/cemo-16.jpg", title: "Garaj Toplantısı" },
+  { src: "assets/cemo-17.jpg", title: "Gece Selfie" },
+  { src: "assets/cemo-18.jpg", title: "Sarımsak Finali" }
+    ];
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
