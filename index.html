@@ -8,13 +8,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="loader" class="loader">
+    <div class="loader-logo">BOMBOCLAT <span>CEMO</span></div>
+    <div class="loader-bar"><i></i></div>
+    <p>Sanayi modu hazırlanıyor...</p>
+  </div>
   <div class="noise"></div>
+  <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+  <div id="cursorGlow" class="cursor-glow"></div>
 
   <header class="topbar">
     <a class="logo" href="#home">BOMBOCLAT <span>CEMO</span></a>
     <nav>
       <a href="#gallery">Galeri</a>
       <a href="#random">Random</a>
+      <a href="#upload">Foto Ekle</a>
+      <a href="#extras">Ekstralar</a>
       <a href="#about">Hakkında</a>
     </nav>
   </header>
@@ -55,6 +64,7 @@
         <p class="eyebrow">TÜM FOTOĞRAFLAR</p>
         <h2>Cemo Gallery</h2>
       </div>
+      <input class="search" id="searchInput" placeholder="Galeride ara: sarımsak, sanayi, gözlük...">
       <div class="gallery" id="galleryGrid"></div>
     </section>
 
@@ -71,11 +81,94 @@
       </div>
     </section>
 
+
+
+    <section id="extras" class="extras-section">
+      <div class="section-head">
+        <p class="eyebrow">MEGA ÖZELLİKLER</p>
+        <h2>Cemo Kontrol Merkezi</h2>
+      </div>
+      <div class="extras-grid">
+        <article class="extra-card daily-card">
+          <p class="eyebrow">GÜNÜN CEMOSU</p>
+          <img id="dailyImage" src="" alt="Günün Cemo fotoğrafı">
+          <strong id="dailyTitle"></strong>
+        </article>
+        <article class="extra-card">
+          <p class="eyebrow">CEMO SÖZÜ</p>
+          <h3 id="quoteText">Yükleniyor...</h3>
+          <button class="btn primary" id="quoteBtn">Yeni Söz Getir</button>
+        </article>
+        <article class="extra-card stat-card">
+          <p class="eyebrow">ZİYARETÇİ PANELİ</p>
+          <h3><span id="visitCount">0</span>. girişin</h3>
+          <p>Bu sayaç kullanıcının kendi cihazında tutulur.</p>
+        </article>
+        <article class="extra-card">
+          <p class="eyebrow">SLAYT MODU</p>
+          <h3>Fotoğraflar otomatik aksın</h3>
+          <button class="btn primary" id="slideshowBtn">Slayt Başlat</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="favorites-section">
+      <div class="section-head">
+        <p class="eyebrow">FAVORİLER</p>
+        <h2>Beğendiğin Cemo Kareleri</h2>
+      </div>
+      <div id="favoritesGrid" class="gallery"></div>
+    </section>
+
+    <section id="upload" class="upload-section">
+      <div class="upload-panel">
+        <p class="eyebrow">KULLANICI FOTOĞRAF EKLEME</p>
+        <h2>Fotoğrafını Siteye Ekle</h2>
+        <p>GitHub Pages statik olduğu için bu sistem şimdilik fotoğrafı kullanıcının kendi tarayıcısında saklar. Gerçekten herkesin göreceği fotoğraf yükleme için Firebase veya Supabase gerekir.</p>
+
+        <label class="upload-drop" for="photoInput">
+          <span>Fotoğraf seç veya sürükle</span>
+          <small>JPG, PNG, WEBP desteklenir</small>
+        </label>
+        <input id="photoInput" type="file" accept="image/*" multiple hidden />
+
+        <div class="upload-actions">
+          <button class="btn primary" id="clearUploads">Eklenenleri Temizle</button>
+          <button class="btn ghost" id="downloadGallery">Galeri JSON İndir</button>
+        </div>
+      </div>
+
+      <div class="upload-preview">
+        <h3>Kullanıcı Eklenenleri</h3>
+        <div id="userGallery" class="mini-gallery"></div>
+      </div>
+    </section>
+
+    <section class="features">
+      <article><strong>⚡</strong><span>Random Cemo modu</span></article>
+      <article><strong>🖼️</strong><span>Tam ekran fotoğraf izleme</span></article>
+      <article><strong>📱</strong><span>Mobil uyumlu tasarım</span></article>
+      <article><strong>📤</strong><span>Kullanıcı fotoğraf ekleme</span></article>
+      <article><strong>🔎</strong><span>Galeri arama alanı</span></article>
+      <article><strong>🧰</strong><span>Sanayi temalı özel arayüz</span></article>
+    </section>
+
     <section id="about" class="about">
       <h2>BOMBOCLAT CEMO</h2>
       <p>Bu site GitHub Pages için hazırlandı. Dosyaları repoya at, Pages kısmından yayınla, site herkese açık olur.</p>
     </section>
   </main>
+
+
+  <div class="music-player" id="musicPlayer">
+    <div class="disc">KV</div>
+    <div>
+      <strong>Kurtlar Vadisi Modu</strong>
+      <span id="musicStatus">Başlatmak için tıkla</span>
+    </div>
+    <button id="musicToggle">▶</button>
+    <audio id="siteMusic" src="assets/kurtlar.mp3" autoplay loop preload="auto"></audio>
+  </div>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="close" id="closeLightbox">×</button>
